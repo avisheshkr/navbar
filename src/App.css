@@ -1,0 +1,119 @@
+.App {
+  height: 100vh;
+  background-color: var(--background-color);
+  position: relative;
+}
+
+.navbar {
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  height: 7rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 5px 20px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.navbar .menu,
+.navbar .social-icons {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar .menu {
+  letter-spacing: 1px;
+}
+
+.menu li a {
+  color: #000;
+  transition: var(--transition);
+}
+
+.menu li a:hover {
+  color: var(--primary-color);
+}
+
+.social-icons li a {
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.social-icons li a:hover {
+  opacity: 0.6;
+}
+
+.social-icons li a {
+  display: flex;
+  align-items: center;
+}
+
+.bars {
+  font-size: 3rem;
+  display: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.bars:hover {
+  transform: rotate(90deg);
+  color: var(--primary-color);
+}
+
+.mobileMenu {
+  width: 100%;
+  position: absolute;
+  top: 7rem;
+  background-color: #fff;
+  padding: 2rem 0 0 0;
+  letter-spacing: 1px;
+  transition: 0.5s ease-in-out;
+}
+
+.mobileMenu.inactive {
+  transform: translateY(-100%);
+}
+
+.mobileMenu.active {
+  transform: translateY(0);
+}
+.mobileMenu li {
+  transition: var(--transition);
+}
+
+.mobileMenu li:hover {
+  background-color: rgb(254, 236, 202);
+}
+
+.mobileMenu li a {
+  display: block;
+  width: 100%;
+  padding: 2rem 5rem;
+  transition: var(--transition);
+}
+
+.mobileMenu li a:hover {
+  color: var(--primary-color);
+  background-color: rgb(254, 236, 202);
+  transform: translateX(10px);
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 0 5rem;
+    justify-content: space-between;
+    box-shadow: none;
+  }
+
+  .navbar .menu,
+  .navbar .social-icons {
+    display: none;
+  }
+
+  .bars {
+    display: block;
+  }
+}
